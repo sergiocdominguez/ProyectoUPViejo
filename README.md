@@ -13,25 +13,43 @@
     - AngularJS
     - MongoDB
     
-  * EndPoints de Api
+  * EndPoints de Api:
   
-    - Obtener Campos: /api/campos/get
-    - Obtener CamposID: /api/campos/get {Parametros} (campo_id)
-    - Crear Campo: /api/campos/crear/{Parametros} (campo_id,campo_nombre,campo_ubicacion(lat,lng),campo_direccion) 
-    - Eliminar Campo: /api/campos/eliminar/{Parametros} (campo_id)
-    - Modificar Campo: /api/campos/modificar/{Parametros} (campo_id,campo_nombre,campo_ubicacion(lat,lng),campo_direccion) 
+    - Obtener Campos: GET /api/campos?order=asc&limit=50
+    - Obtener Campos: GET /api/campos/campo_id
+    - Crear Campo: POST /api/campos/ 
+      - BODY(campo_nombre,campo_ubicacion(lat,lng),campo_direccion) 
+    - Modificar Campo: PUT /api/campos/campo_id
+      - BODY(campo_nombre,campo_ubicacion(lat,lng),campo_direccion) 
+    - Eliminar Campo: DELETE /api/campos/campo_id
     
-    - Obtener Torneos: /api/torneos/get
-    - Obtener TorneoID: /api/torneos/get {Parametros} (torneo_id)
-    - Crear Torneo: /api/torneos/crear/{Parametros} (torneo_id, campo_id,torneo_nombre,torneo_fecha) 
-    - Modificar Torneo: /api/torneos/modificar/{Parametros} (torneo_id, campo_id,torneo_nombre,torneo_fecha)
-    - Inscribirse a Torneo: /api/torneos/inscribirse/{Parametros} (torneo_id, usuario_id)
-    - Desinscribirse de Torneo: /api/torneos/describirse/{Parametros} (torneo_id, usuario_id)
+    - Obtener Torneos: /api/torneos?order=asc&limit=50
+    - Obtener Torneo: /api/torneos/torneo_id
+    - Crear Torneo: POST /api/torneos/
+      - BODY(campo_id,torneo_nombre,torneo_fecha) 
+    - Modificar Torneo: PUT /api/torneos/torneo_id 
+      - BODY(campo_id,torneo_nombre,torneo_fecha)
+    - Eliminar Torneo: DELETE /api/torneos/torneo_id
     
-    - Obtener Usuarios: /api/usuarios/get
-    - Obtener UsuariosID: /api/usuarios/get/{Parametros} (usuario_id)
-    - Crear de Usuarios: /api/usuarios/crear/{Parametros} (usuario_id, usuario_nombre, usuario_apellido, usuario_handicap)
-    - Modificar de Usuarios: /api/usuarios/modificar/{Parametros} (usuario_id, usuario_nombre, usuario_apellido, usuario_handicap)
-    - Eliminar Usuarios: /api/usuarios/eliminar/{Parametros} (usuario_id)
+    - Obtener Lineas: GET /api/torneo/torneo_id/lineas?order=asc&limit=50
+    - Obtener Linea: GET /api/torneo/torneo_id/lineas/linea_id
+    - Crear Lineas: POST /api/torneo/torneo_id/lineas/
+      - BODY(horario_id)
+    - Modificar Lineas: PUT /api/torneo/torneo_id/lineas/linea_id
+      - BODY(horario_id)
+      
+    - Obtener Usuarios: GET /api/usuarios?order=asc&limit=50
+    - Obtener Usuario: GET /api/usuarios/usuario_id
+    - Crear Usuario: POST /api/usuario/
+      - BODY(usuario_nombre, usuario_apellido, usuario_handicap)
+    - Modificar Usuario: PUT /api/usuarios/usuario_id
+      - BODY(usuario_nombre, usuario_apellido, usuario_handicap)
+    
+    - Inscribirse a Torneo: POST /api/torneos/torneo_id/linea/linea_id/
+      - BODY(usuario_id)
+    - Desinscribir Usuarios de una Linea:  DELETE /api/torneos/torneo_id/linea/linea_id/usuario
+    - Desinscribir un usuario de una Linea: DELETE /api/torneos/torneo_id/linea/linea_id/usuario/usuario_id
+    
+    
     
     
