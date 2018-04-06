@@ -6,10 +6,9 @@
     - 090552 - Ignacio Lizarraga - nacho_95_@hotmail.com
   
   * Negocio a resolver
-    - Se intenta realizar un aplicativo web que resuelva el orden de las salidas en un campo de golf.
+    - Se intenta realizar un aplicativo web que organice eventos para salir a jugar a un campo de golf.
   
   * Tecnologías en Uso
     - NodeJS
     - AngularJS
     - MongoDB
- 
