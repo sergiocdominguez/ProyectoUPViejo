@@ -18,9 +18,9 @@
     - Obtener Campos: GET /api/campos?order=asc&limit=50
     - Obtener Campos: GET /api/campos/campo_id
     - Crear Campo: POST /api/campos/ 
-      - BODY(campo_nombre,campo_ubicacion(lat,lng),campo_direccion) 
+      - BODY(campo_nombre,ubicacion(lat,lng),campo_direccion) 
     - Modificar Campo: PUT /api/campos/campo_id
-      - BODY(campo_nombre,campo_ubicacion(lat,lng),campo_direccion) 
+      - BODY(campo_nombre,ubicacion(lat,lng),campo_direccion) 
     - Eliminar Campo: DELETE /api/campos/campo_id
     
     - Obtener Torneos: /api/torneos?order=asc&limit=50
@@ -41,9 +41,9 @@
     - Obtener Usuarios: GET /api/usuarios?order=asc&limit=50
     - Obtener Usuario: GET /api/usuarios/usuario_id
     - Crear Usuario: POST /api/usuario/
-      - BODY(usuario_nombre, usuario_apellido, usuario_handicap)
+      - BODY(nombre, apellido, edad, email, handicap)
     - Modificar Usuario: PUT /api/usuarios/usuario_id
-      - BODY(usuario_nombre, usuario_apellido, usuario_handicap)
+      - BODY(nombre, apellido, edad, email, handicap)
     
     - Inscribirse a Torneo: POST /api/torneos/torneo_id/linea/linea_id/
       - BODY(usuario_id)
