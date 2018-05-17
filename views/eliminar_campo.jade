@@ -1,0 +1,16 @@
+extends ./layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Eliminar campo #{campo.nombre}
+        form(action="/api/campos/#{campo._id}", method="POST")
+            <input type="hidden" name="_method" value="delete"/>
+            div(class="form-group")
+            div
+                p Id: #{campo._id}
+                p Nombre: #{campo.nombre}
+                p Ubicacion: #{campo.ubicacion}
+                p Coordenadas: #{campo.coordenadas}
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Eliminar campo",class="btn btn-info", onclick="return confirm('Esta seguro de eliminar el registro?');")

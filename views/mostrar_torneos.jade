@@ -1,0 +1,25 @@
+extends ./layout.jade
+block contenido
+
+    div(class="container")
+        h1 Listado de Torneos 
+        for torneo in torneos 
+            .white.border.tr.large-padding
+                .row
+                    .col-md-8
+                        p Id: #{torneo._id}
+                        p Fecha: #{torneo.fecha} 
+                        p Campo: 
+                        p(class="left-space") Nombre: #{torneo.campo.nombre}
+                        p(class="left-space") Ubicacion: #{torneo.campo.ubicacion}
+                        p Participantes de Linea: 
+                        p(class="left-space") #{torneo.linea.id_usuario1.nombre} #{torneo.linea.id_usuario1.apellido}  
+                        p(class="left-space") #{torneo.linea.id_usuario2.nombre} #{torneo.linea.id_usuario2.apellido}
+                        p(class="left-space") #{torneo.linea.id_usuario3.nombre} #{torneo.linea.id_usuario3.apellido} 
+                        p(class="left-space") #{torneo.linea.id_usuario4.nombre} #{torneo.linea.id_usuario4.apellido}  
+                        p Horario: #{torneo.horario.descripcion}
+                        p
+                    .col.md-2
+                        a(href="/api/torneos/#{torneo._id}", class="right-space") Ver
+                        a(href="/api/torneos/#{torneo._id}/editar", class="right-space") Editar
+                        a(href="/api/torneos/#{torneo._id}/eliminar", class="right-space") Eliminar

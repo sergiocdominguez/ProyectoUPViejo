@@ -1,0 +1,38 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-8 remove-float center-block big-top-space")
+        h1 Alta Linea
+        form(action="/api/lineas", method="POST")
+            div(class="form-group")
+            div
+                label(for="usuario1") Jugador 1
+                select(id="usuario1", name="usuario1", class="form-control")
+                    option  
+                    for usuario in usuarios 
+                        option(value="#{usuario._id}") #{usuario.nombre} #{usuario.apellido} (#{usuario.handicap})
+                p
+            div
+                label(for="usuario2") Jugador 4
+                select(id="usuario2", name="usuario2", class="form-control")
+                    option
+                    for usuario in usuarios 
+                        option(value="#{usuario._id}") #{usuario.nombre} #{usuario.apellido} (#{usuario.handicap})
+                p
+            div
+                label(for="usuario3") Jugador 3
+                select(id="usuario3", name="usuario3", class="form-control")
+                    option
+                    for usuario in usuarios 
+                        option(value="#{usuario._id}") #{usuario.nombre} #{usuario.apellido} (#{usuario.handicap})
+                p
+             div
+                label(for="usuario4") Jugador 4
+                select(id="usuario4", name="usuario4", class="form-control")
+                    option
+                    for usuario in usuarios 
+                        option(value="#{usuario._id}") #{usuario.nombre} #{usuario.apellido} (#{usuario.handicap})
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta linea", class="btn btn-info")

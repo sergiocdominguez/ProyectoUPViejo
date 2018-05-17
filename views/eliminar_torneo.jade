@@ -1,0 +1,17 @@
+extends ./layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Eliminar Torneo
+        form(action="/api/torneos/#{torneo._id}", method="POST")
+            <input type="hidden" name="_method" value="delete"/>
+            div(class="form-group")
+            div
+                p Id: #{torneo._id}
+                p Fecha: #{torneo.fecha}
+                p Campo: #{torneo.campo}
+                p Linea: #{torneo.linea}
+                p Horario: #{torneo.horario}
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Eliminar torneo",class="btn btn-info", onclick="return confirm('Esta seguro de eliminar el registro?');")

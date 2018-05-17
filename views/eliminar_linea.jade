@@ -1,0 +1,16 @@
+extends ./layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Eliminar linea
+        form(action="/api/lineas/#{linea._id}", method="POST")
+            <input type="hidden" name="_method" value="delete"/>
+            div(class="form-group")
+            div
+                p Id: #{linea._id}
+                p Primer Usuario: #{linea.id_usuario1.nombre} #{linea.id_usuario1.apellido}
+                p Segundo Usuario: #{linea.id_usuario2.nombre} #{linea.id_usuario2.apellido}
+                p Tercer Usuario: #{linea.id_usuario3.nombre} #{linea.id_usuario3.apellido}
+                p Cuarto Usuario: #{linea.id_usuario4.nombre} #{linea.id_usuario4.apellido}
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Eliminar linea",class="btn btn-info", onclick="return confirm('Esta seguro de eliminar el registro?');")

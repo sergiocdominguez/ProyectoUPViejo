@@ -1,0 +1,17 @@
+extends ./layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Eliminar usuario #{usuario.nombre}
+        form(action="/api/usuarios/#{usuario._id}", method="POST")
+            <input type="hidden" name="_method" value="delete"/>
+            div(class="form-group")
+            div
+                p Nombre: #{usuario.nombre}
+                p Apellido: #{usuario.apellido}
+                p Email: #{usuario.email}
+                p Edad: #{usuario.edad}
+                p Handicap: #{usuario.handicap}
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Eliminar usuario",class="btn btn-info", onclick="return confirm('Esta seguro de eliminar el registro?');")

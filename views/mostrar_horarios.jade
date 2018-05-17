@@ -1,0 +1,11 @@
+extends ./layout.jade
+block contenido
+
+    div(class="container")
+        h1 Listado de Horarios 
+        for horario in horarios 
+            .white.border.tr.large-padding
+                .row
+                    .col-md-8
+                        p Id: #{horario._id}
+                        p Descripcion: #{horario.descripcion}

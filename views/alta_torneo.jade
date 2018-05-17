@@ -1,0 +1,23 @@
+extends ./layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Alta Torneo
+        form(action="/api/torneos", method="POST")
+            div(class="form-group")
+            div
+                label(for="fecha")  Fecha
+                input(type="date", name="fecha", id="fecha", placeholder="Fecha", class="form-control")
+            div
+                label(for="campo")  Campo
+                input(type="text", name="campo", id="campo", placeholder="Campo", class="form-control")
+            div
+                label(for="linea") Linea
+                input(type="text", name="linea", id="linea", placeholder="Linea", class="form-control")
+            div
+                label(for="horario") Horario
+                input(type="text", name="horario", id="horario", placeholder="Horario", class="form-control")
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta torneo", class="btn btn-info")

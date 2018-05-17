@@ -1,0 +1,24 @@
+extends ./layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Editar torneo
+        form(action="/api/torneos/#{torneo._id}", method="POST")
+            <input type="hidden" name="_method" value="put"/>
+            div(class="form-group")
+            div
+                label(for="fecha")  Fecha
+                input(type="date", name="fecha", id="fecha", value="#{torneo.fecha}", class="form-control")
+            div
+                label(for="campo")  Campo
+                input(type="text", name="campo", id="campo", value="#{torneo.campo}", class="form-control")
+            div
+                label(for="linea") Linea
+                input(type="text", name="linea", id="linea", value="#{torneo.linea}", class="form-control")
+            div
+                label(for="horario") Horario
+                input(type="text", name="horario", id="horario", value="#{torneo.horario}", class="form-control")
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Editar torneo",class="btn btn-info")
